@@ -10,7 +10,7 @@ module Doorkeeper
     MAJOR = 5
     MINOR = 0
     TINY = 3
-    PRE = nil
+    PRE = "lwd"
 
     # Full version number
     STRING = [MAJOR, MINOR, TINY, PRE].compact.join('.')
