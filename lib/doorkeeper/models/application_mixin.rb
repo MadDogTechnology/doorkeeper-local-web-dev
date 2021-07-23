@@ -48,9 +48,9 @@ module Doorkeeper
     # @return [String] The redirect URI(s) seperated by newlines.
     def redirect_uri=(uris)
       super(uris.is_a?(Array) ? uris.join("\n") : uris)
-      $stderr.puts "in redirect_uri"
+      Rails.logger.debug "in redirect_uri"
       if uris and !uris.empty?
-        $stderr.puts uris
+        Rails.logger.debug  uris
       end
     end
   end

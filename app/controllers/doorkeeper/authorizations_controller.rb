@@ -6,7 +6,7 @@ module Doorkeeper
 
     def new
       if pre_auth.authorizable?
-        $stderr.puts "in pre_auth.authorizable"
+        Rails.logger.debug "in pre_auth.authorizable"
         render_success
       else
         render_error
@@ -52,8 +52,8 @@ module Doorkeeper
     end
 
     def redirect_or_render(auth)
-      $stderr.puts "in predirect_or_render: "
-      $strerr.puts auth
+      Rails.logger.debug "in predirect_or_render: "
+      Rails.logger.debug auth
       if auth.redirectable?
         if Doorkeeper.configuration.api_only
           render(
