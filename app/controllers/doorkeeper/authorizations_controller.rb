@@ -5,6 +5,7 @@ module Doorkeeper
     before_action :authenticate_resource_owner!
 
     def new
+      Rails.logger.warn "in new for Doorkeeper::ApplicationController"
       if pre_auth.authorizable?
         Rails.logger.warn "in pre_auth.authorizable"
         render_success
